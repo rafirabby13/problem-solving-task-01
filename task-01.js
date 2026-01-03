@@ -45,7 +45,7 @@ const books = [
 ];
 
 const booksWithOnlyTitles = (books) => {
-    return booksTitles = books.map(book =>  book.title );
+    return books.map(book =>  book.title );
 
 
 }
@@ -91,11 +91,11 @@ const cars = [
 
 
 const carsSortingByYear = (cars) => {
-    return cars.sort((a, b) => a.year - b.year);
+    return [...cars].sort((a, b) => a.year - b.year);
 }
 
 
-// console.log(carsSortingByYear(cars))
+console.log(carsSortingByYear(cars))
 
 const persons = [
   { name: "Alice", age: 25, gender: "Female" },
@@ -107,16 +107,16 @@ const persons = [
 
 
 const modifyAge = (name, increament)=>{
-    const person = persons.map(person => {
-        if (person.name === name) {
-            return { ...person, age: person.age + increament };
+    const person = persons.map(p => {
+        if (p.name === name) {
+            return { ...p, age: p.age + increament };
         }        
-        return person;
+        return p;
     }); 
     return person;
 }
 
-console.log(modifyAge("Ethan", 3))
+console.log(modifyAge("Ethan", 2223))
 
 const numbers = [1, 2, 3, 4, 5, 6];
 
@@ -130,12 +130,12 @@ const sumOfEvens =(numbers)=>{
 
 const leapYear = (year)=>{
     if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
-        return true;    
+        return "Leap Year";    
     } else {
-        return false;
+        return "Not a Leap Year";
     }   
 }
-
+console.log(leapYear(2000))
 const numbers2 = [1, 2, 3, 4, 2, 5, 3, 6, 1, 7,8,8,8,8];
 
 const removeDuplicates = (numbers)=>{
