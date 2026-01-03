@@ -107,13 +107,13 @@ const persons = [
 
 
 const modifyAge = (name, increament)=>{
-    const person = persons.map(p => {
+    const updatedPeople = persons.map(p => {
         if (p.name === name) {
             return { ...p, age: p.age + increament };
         }        
         return p;
     }); 
-    return person;
+    return updatedPeople;
 }
 
 console.log(modifyAge("Ethan", 2223))
